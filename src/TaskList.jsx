@@ -1,7 +1,6 @@
 import { tasks as data} from './tasks.js'
 import { useState, useEffect } from 'react';
-
-//console.log(data);
+import './TaskList.css'
 
 
 function TaskList() {
@@ -11,17 +10,12 @@ function TaskList() {
     setTasks(data)
   }, [])
   
-
-  // if(tasks.length === 0){
-  //   return <h1>No hay elementos</h1>
-  // }
   return (
-    <div>
+    <div className='list__Tasks'>
       {
         tasks.map((task)=>(
           <div key={task.id}>
             <h1>{task.titulo}</h1>
-            <p>{task.description}</p>
           </div>
         ))
       }
